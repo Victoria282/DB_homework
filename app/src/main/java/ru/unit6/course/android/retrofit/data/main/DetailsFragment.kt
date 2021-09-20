@@ -43,7 +43,8 @@ class DetailsFragment() : Fragment(R.layout.details_fragment) {
         }
         binding.sendDataBtn.setOnClickListener {
             // Создаем пользователя для отправки
-            val myPost = User("https://pbs.twimg.com/media/E6WweHAWUAE4VV0.jpg", "vilkova_viktoria2000@mail.ru", "282", "Victoria")
+            // id ставится автоматически
+            val myPost = User("https://pbs.twimg.com/media/E6WweHAWUAE4VV0.jpg", "vilkova_viktoria2000@mail.ru", "", "Victoria")
             viewModel.sendData(myPost)
             viewModel.myResponse.observe(viewLifecycleOwner) { response ->
                 val message: String
