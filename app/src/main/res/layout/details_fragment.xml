@@ -19,15 +19,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/textView"
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="50dp"
-        android:fontFamily="@font/montserrat_italic"
         android:gravity="center"
         android:text="TextView"
-        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,14 +49,13 @@
         tools:ignore="MissingConstraints">
 
         <TextView
+            style="@style/textView"
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
             android:layout_margin="32dp"
-            android:fontFamily="@font/montserrat_italic"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -87,7 +85,7 @@
         android:id="@+id/toHomeFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_italic"
+        style="@style/btn"
         android:text="@string/btn_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,11 +95,11 @@
         app:layout_constraintVertical_bias="0.512" />
 
     <Button
+        style="@style/btn"
         android:id="@+id/send_data_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send_btn"
-        android:fontFamily="@font/montserrat_italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.632"

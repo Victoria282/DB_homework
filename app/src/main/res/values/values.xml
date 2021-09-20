@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="btn">
+        <item name = "font"> @font/montserrat_italic </item>
+    </style>
+    <style name="textView">
+        <item name="font">@font/montserrat_italic</item>
+        <item name="color">@color/black</item>
+    </style>
+</resources>

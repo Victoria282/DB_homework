@@ -12,12 +12,13 @@ class MainAdapter(private val users: ArrayList<User>)
 
     var clickListener: PersonClickListener? = null
 
-    interface PersonClickListener{
+    interface PersonClickListener {
         fun onPersonClick(id: String)
     }
 
-    class DataViewHolder(private val binding: ItemLayoutBinding,
-                         private val listener: PersonClickListener?)
+    class DataViewHolder(
+        private val binding: ItemLayoutBinding,
+        private val listener: PersonClickListener?)
         : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: User) {
@@ -28,12 +29,12 @@ class MainAdapter(private val users: ArrayList<User>)
                     .load(user.avatar)
                     .into(binding.imageViewAvatar)
                     binding.ticketCard.setOnClickListener {
-                    // Toast.makeText(context, "нажато!", Toast.LENGTH_LONG).show()
-                    listener?.onPersonClick(user.id)
+                        listener?.onPersonClick(user.id)
+                    }
                 }
             }
         }
-    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
     : DataViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -41,9 +42,9 @@ class MainAdapter(private val users: ArrayList<User>)
             inflater,
             parent,
             false)
-
         return DataViewHolder(binding, clickListener)
     }
+
     override fun getItemCount(): Int = users.size
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {

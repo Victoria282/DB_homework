@@ -18,16 +18,15 @@ import ru.unit6.course.android.retrofit.data.view_model.MainViewModel
 import ru.unit6.course.android.retrofit.utils.Status
 
 class HomeFragment : Fragment(R.layout.fragment_home), MainAdapter.PersonClickListener {
+    private lateinit var viewModel: MainViewModel
+    private lateinit var adapter: MainAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var progressBar: ProgressBar
 
     override fun onPersonClick(id: String) {
         val action = HomeFragmentDirections.toDetails(id)
         findNavController().navigate(action)
     }
-
-    private lateinit var viewModel: MainViewModel
-    private lateinit var adapter: MainAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var progressBar: ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -83,9 +82,5 @@ class HomeFragment : Fragment(R.layout.fragment_home), MainAdapter.PersonClickLi
                 }
             }
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 }
