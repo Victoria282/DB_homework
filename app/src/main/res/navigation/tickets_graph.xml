@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tickets_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.unit6.course.android.retrofit.data.main.HomeFragment"
+        android:label="Главный экран"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/toDetails"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ru.unit6.course.android.retrofit.data.main.DetailsFragment"
+        android:label="Детальная информация"
+        tools:layout="@layout/details_fragment">
+        <argument
+            android:name="personId"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/toHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
