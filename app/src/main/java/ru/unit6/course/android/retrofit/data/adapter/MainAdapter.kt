@@ -22,18 +22,18 @@ class MainAdapter(private val users: ArrayList<User>)
         : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: User) {
-            itemView.apply {
-                binding.textViewUserName.text = user.name
-                binding.textViewUserEmail.text = user.email
-                Glide.with(binding.imageViewAvatar.context)
+            with(binding) {
+                textViewUserName.text = user.name
+                textViewUserEmail.text = user.email
+                Glide.with(imageViewAvatar.context)
                     .load(user.avatar)
-                    .into(binding.imageViewAvatar)
-                    binding.ticketCard.setOnClickListener {
-                        listener?.onPersonClick(user.id)
-                    }
+                    .into(imageViewAvatar)
+                ticketCard.setOnClickListener {
+                    listener?.onPersonClick(user.id)
                 }
             }
         }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
     : DataViewHolder {

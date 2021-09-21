@@ -37,7 +37,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun sendData(post: User) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = mainRepository.sendData(post)
             myResponse.value = response
         }
