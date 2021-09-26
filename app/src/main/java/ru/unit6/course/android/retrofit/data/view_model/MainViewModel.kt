@@ -16,7 +16,7 @@ import ru.unit6.course.android.retrofit.data.utils.Resource
 class MainViewModel : ViewModel() {
     private val apiHelper = ApiHelper(RetrofitBuilder.apiService)
     private val mainRepository: MainRepository = MainRepository(apiHelper)
-    val myResponse: MutableLiveData<Response<User>> = MutableLiveData()
+    private val myResponse: MutableLiveData<Response<User>> = MutableLiveData()
 
     fun getUsers() = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))

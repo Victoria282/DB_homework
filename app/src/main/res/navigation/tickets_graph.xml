@@ -13,6 +13,9 @@
         <action
             android:id="@+id/toDetails"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/toAddPerson"
+            app:destination="@+id/addPersonFragment"/>
     </fragment>
 
     <fragment
@@ -22,8 +25,17 @@
         tools:layout="@layout/details_fragment">
         <argument
             android:name="personId"
-            app:argType="string"
+            app:argType="integer"
             app:nullable="false" />
+        <action
+            android:id="@+id/toHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPersonFragment"
+        android:name="ru.unit6.course.android.retrofit.data.main.addPersonFragment"
+        android:label="Добавить пользователя"
+        tools:layout="@layout/fragment_add_person">
         <action
             android:id="@+id/toHome"
             app:destination="@id/homeFragment" />
