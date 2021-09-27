@@ -4,11 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/database-homework/app/src/main/res/drawable/ic_add.xml" value="0.15555555555555556" />
-        <entry key="..\:/database-homework/app/src/main/res/layout/details_fragment.xml" value="0.22" />
+        <entry key="..\:/database-homework/app/src/main/res/layout/details_fragment.xml" value="0.44813278008298757" />
         <entry key="..\:/database-homework/app/src/main/res/layout/fragment_add_person.xml" value="0.10144927536231885" />
         <entry key="..\:/database-homework/app/src/main/res/layout/fragment_home.xml" value="0.10144927536231885" />
         <entry key="..\:/database-homework/app/src/main/res/layout/item_layout.xml" value="0.22" />
         <entry key="..\:/database-homework/app/src/main/res/layout/main_activity.xml" value="0.21851851851851853" />
+        <entry key="..\:/database-homework/app/src/main/res/menu/menu.xml" value="0.4466666666666667" />
         <entry key="..\:/retrofit-lesson/app/src/main/res/drawable/my_btn.xml" value="0.19282051282051282" />
         <entry key="..\:/retrofit-lesson/app/src/main/res/layout/btn.xml" value="0.1621376811594203" />
         <entry key="..\:/retrofit-lesson/app/src/main/res/layout/details_fragment.xml" value="0.22" />

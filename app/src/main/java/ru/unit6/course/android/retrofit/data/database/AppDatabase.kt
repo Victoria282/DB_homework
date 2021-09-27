@@ -20,22 +20,25 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
         // null если база данных еще не создана
+        @Volatile
         private var INSTANCE: AppDatabase? = null
-        private const val DATABASE_NAME = "VictoriaDatabase"
+        private const val DATABASE_NAME = "MyDatabase"
 
         // при создании DB необходим контекст прил-я (БД создается)
         fun invoke(context: Context) : AppDatabase{
-            if(INSTANCE == null) {
-                synchronized(this) {
-                    INSTANCE = Room.databaseBuilder(
-                            context.applicationContext,
-                            AppDatabase::class.java,
-                            DATABASE_NAME
-                        ).build()
-                    }
-                }
-            return INSTANCE!!
+            val temp = INSTANCE
+            if(temp != null) {
+                return temp
+            }
+            synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    DATABASE_NAME
+                ).build()
+                INSTANCE = instance
+                return INSTANCE!!
+            }
         }
-        fun getDatabase() = INSTANCE!!
     }
 }

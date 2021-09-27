@@ -1,5 +1,6 @@
 package ru.unit6.course.android.retrofit.data.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,12 +14,11 @@ class DatabaseAdapter(private val users: ArrayList<UserDB>)
     var clickListener: PersonClickListener? = null
 
     interface PersonClickListener {
-        fun onPersonClick(id: Int)
+        fun onPersonClick(user_db: UserDB)
     }
 
     class DataViewHolder(private val binding: ItemLayoutBinding,
-                         private val listener: PersonClickListener?
-    )
+                         private val listener: PersonClickListener?)
         : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user_db: UserDB) {
@@ -29,7 +29,7 @@ class DatabaseAdapter(private val users: ArrayList<UserDB>)
                      .load(user_db.avatar)
                      .into(imageViewAvatar)
                 ticketCard.setOnClickListener {
-                    listener?.onPersonClick(user_db.id)
+                    listener?.onPersonClick(user_db)
                 }
             }
         }
@@ -50,9 +50,11 @@ class DatabaseAdapter(private val users: ArrayList<UserDB>)
         holder.bind(users[position])
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun addUsers(users: List<UserDB>) {
         this.users.apply {
             addAll(users)
         }
+        notifyDataSetChanged()
     }
 }

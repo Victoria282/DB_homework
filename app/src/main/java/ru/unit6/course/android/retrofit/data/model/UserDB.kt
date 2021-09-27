@@ -1,7 +1,9 @@
 package ru.unit6.course.android.retrofit.data.model
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 // Класс помечается аннотацией Entity. Объекты класса UserDB будут использоваться при
 // работе с базой данных. Например, мы будем получать их от базы при запросах данных и
@@ -10,6 +12,7 @@ import androidx.room.PrimaryKey
 // А поля таблицы будут созданы в соответствии с полями класса.
 
 //Аннотацией PrimaryKey мы помечаем поле, которое будет ключом в таблице.
+@Parcelize
 @Entity(tableName = "users")
 data class UserDB(
     @PrimaryKey(autoGenerate = true)
@@ -20,4 +23,4 @@ data class UserDB(
     val email:String,
     @ColumnInfo(name = "avatar")
     val avatar:String
-)
+):Parcelable

@@ -15,7 +15,7 @@ class DatabaseViewModel(application: Application):AndroidViewModel(application) 
      private val databaseRepository: DatabaseRepository
 
     init {
-        val userDao = AppDatabase.getDatabase().userDao()
+        val userDao = AppDatabase.invoke(application).userDao()
         databaseRepository = DatabaseRepository(userDao)
         readAllData = databaseRepository.readAllData
     }
@@ -27,6 +27,18 @@ class DatabaseViewModel(application: Application):AndroidViewModel(application) 
      fun getUser(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             databaseRepository.getUser(id)
+        }
+    }
+
+    fun updateUser(user: UserDB) {
+        viewModelScope.launch(Dispatchers.IO)  {
+            databaseRepository.updateUser(user)
+        }
+    }
+
+    fun deleteUser(user: UserDB) {
+        viewModelScope.launch(Dispatchers.IO)  {
+            databaseRepository.deleteUser(user)
         }
     }
 }

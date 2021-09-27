@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import ru.unit6.course.android.retrofit.data.model.UserDB
 import java.sql.RowId
-
 // В объекте Dao мы будем описывать методы для работы с базой данных.
 // Нам нужны будут методы для получения списка юзеров и для добавления/изменения/
 // удаления юзеров.
@@ -12,19 +11,14 @@ import java.sql.RowId
 @Dao
 interface UserDao {
     // Add
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(user: UserDB)
     // Read
     @Query("SELECT * FROM users")
     fun getAllUsers():LiveData<List<UserDB>>
-
+    // Get one
     @Query("Select * From users Where 'id' = :id")
     suspend fun getUser(id:Int) :UserDB
-    /*
-
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllUsers(users: List<UserDB>)
 
     @Update
     suspend fun updateUser(user: UserDB)
@@ -32,5 +26,4 @@ interface UserDao {
     @Delete
     suspend fun deleteUser(user: UserDB)
 
-    */
 }

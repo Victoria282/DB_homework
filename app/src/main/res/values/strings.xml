@@ -8,4 +8,6 @@
     <string name="e_mail">E-mail</string>
     <string name="name">Имя</string>
     <string name="inpData">Введите данные:</string>
+    <string name="update_btn">Обновить</string>
+    <string name="delete">удалить</string>
 </resources>

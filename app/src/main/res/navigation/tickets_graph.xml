@@ -24,8 +24,8 @@
         android:label="Детальная информация"
         tools:layout="@layout/details_fragment">
         <argument
-            android:name="personId"
-            app:argType="integer"
+            android:name="user"
+            app:argType="ru.unit6.course.android.retrofit.data.model.UserDB"
             app:nullable="false" />
         <action
             android:id="@+id/toHome"

@@ -10,8 +10,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_home.*
+import okhttp3.internal.notify
+import okhttp3.internal.notifyAll
 import ru.unit6.course.android.retrofit.R
 import ru.unit6.course.android.retrofit.data.adapter.DatabaseAdapter
+import ru.unit6.course.android.retrofit.data.model.UserDB
 import ru.unit6.course.android.retrofit.data.view_model.DatabaseViewModel
 import ru.unit6.course.android.retrofit.databinding.FragmentHomeBinding
 
@@ -20,8 +23,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), DatabaseAdapter.PersonCli
     private lateinit var userViewModel: DatabaseViewModel
     private lateinit var adapter: DatabaseAdapter
 
-    override fun onPersonClick(id: Int) {
-        val action = HomeFragmentDirections.toDetails(id)
+    override fun onPersonClick(user_db: UserDB) {
+        val action = HomeFragmentDirections.toDetails(user_db)
         findNavController().navigate(action)
     }
 
@@ -35,10 +38,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), DatabaseAdapter.PersonCli
         setupUI()
         setupObservers()
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

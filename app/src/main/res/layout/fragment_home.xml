@@ -26,6 +26,7 @@
         android:visibility="visible" />
 
     <ImageButton
+        android:focusable="true"
         android:id="@+id/addButton"
         android:layout_margin="10dp"
         android:layout_width="60dp"
