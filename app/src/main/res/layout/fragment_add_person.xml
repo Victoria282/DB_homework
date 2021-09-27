@@ -8,14 +8,9 @@
     tools:context=".data.main.addPersonFragment">
 
     <TextView
+        style="@style/textView"
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/inpData"
-        android:fontFamily="@font/montserrat_medium"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,10 +18,7 @@
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:ems="12"
-        android:gravity="center"
+        style="@style/editText"
         android:hint="@string/name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,12 +27,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/editTextTextPersonEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="12"
-        android:gravity="center"
+        style="@style/editText"
         android:inputType="textEmailAddress"
         android:hint="@string/e_mail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,11 +37,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="12"
-        android:gravity="center"
+        style="@style/editText"
         android:hint="@string/urlImage"
         android:inputType="textUri"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,11 +46,8 @@
 
     <Button
         android:id="@+id/sendDataPerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
+        style="@style/btn"
         android:text="@string/save_str"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

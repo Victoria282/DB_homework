@@ -46,7 +46,7 @@ class addPersonFragment : Fragment(R.layout.fragment_add_person) {
             val userDB = UserDB(0, name, email, url)
             viewModel.addUser(userDB)
             Toast.makeText(context,"Успешно!", Toast.LENGTH_LONG).show()
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.homeFragment)
         }
     }
 }

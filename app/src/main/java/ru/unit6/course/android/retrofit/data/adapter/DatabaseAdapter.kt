@@ -53,6 +53,7 @@ class DatabaseAdapter(private val users: ArrayList<UserDB>)
     @SuppressLint("NotifyDataSetChanged")
     fun addUsers(users: List<UserDB>) {
         this.users.apply {
+            clear()
             addAll(users)
         }
         notifyDataSetChanged()

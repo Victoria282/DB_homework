@@ -32,7 +32,8 @@ class DetailsFragment() : Fragment(R.layout.details_fragment) {
     ): View {
         binding = DetailsFragmentBinding.inflate(inflater, container, false)
         binding.text.text = "Здравствуйте,  " + args.user.name + "!"
-        setHasOptionsMenu(true)
+        viewModel = ViewModelProvider(this).get(DatabaseViewModel::class.java)
+
         with(binding) {
             editTextTextPersonName.setText(args.user.name)
             editTextTextPersonEmail.setText(args.user.email)
@@ -53,7 +54,6 @@ class DetailsFragment() : Fragment(R.layout.details_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DatabaseViewModel::class.java)
     }
 
 

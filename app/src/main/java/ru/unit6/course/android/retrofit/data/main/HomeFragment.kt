@@ -1,5 +1,6 @@
 package ru.unit6.course.android.retrofit.data.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

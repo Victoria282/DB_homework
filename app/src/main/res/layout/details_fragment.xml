@@ -10,15 +10,7 @@
     <TextView
         style="@style/textView"
         android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
         android:text=""
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,17 +23,15 @@
         app:civ_border_width="1dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
-        android:ems="12"
-        android:gravity="center"
+        style="@style/editText"
         android:hint="@string/name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,11 +39,8 @@
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <EditText
-        android:layout_marginTop="32dp"
         android:id="@+id/editTextTextPersonEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="12"
+        style="@style/editText"
         android:gravity="center"
         android:inputType="textEmailAddress"
         android:hint="@string/e_mail"
@@ -63,11 +50,7 @@
 
     <EditText
         android:id="@+id/editTextTextPersonUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="12"
-        android:gravity="center"
+        style="@style/editText"
         android:hint="@string/urlImage"
         android:inputType="textUri"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,12 +58,9 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonEmail" />
 
     <Button
+        style="@style/btn"
         android:id="@+id/changeDataPerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
         android:text="@string/update_btn"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -89,10 +69,8 @@
         app:layout_constraintVertical_bias="0.528" />
 
     <Button
+        style="@style/btn"
         android:id="@+id/delete_btn"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Удалить"
         android:backgroundTint="#FF0000"
         app:layout_constraintBottom_toBottomOf="parent"

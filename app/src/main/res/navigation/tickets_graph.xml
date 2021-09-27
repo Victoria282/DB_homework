@@ -27,17 +27,11 @@
             android:name="user"
             app:argType="ru.unit6.course.android.retrofit.data.model.UserDB"
             app:nullable="false" />
-        <action
-            android:id="@+id/toHome"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/addPersonFragment"
         android:name="ru.unit6.course.android.retrofit.data.main.addPersonFragment"
         android:label="Добавить пользователя"
         tools:layout="@layout/fragment_add_person">
-        <action
-            android:id="@+id/toHome"
-            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
